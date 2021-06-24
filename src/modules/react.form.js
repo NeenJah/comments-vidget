@@ -1,4 +1,4 @@
-import {constants} from './constants.js';
+import {constants} from '../constants.js';
 
 class AddCommentForm extends React.Component {
 

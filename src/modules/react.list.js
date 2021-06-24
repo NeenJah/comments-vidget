@@ -1,4 +1,4 @@
-import {constants} from './constants.js';
+import {constants} from '../constants.js';
 import {CommentItem} from './react.item.js';
 
 class CommentsList extends React.Component {

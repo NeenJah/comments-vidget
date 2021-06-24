@@ -1,7 +1,7 @@
-import {constants} from './constants.js';
+import {constants} from '../constants.js';
 import {CommentsList} from './react.list.js';
 import {AddCommentForm} from './react.form.js';
-import {getNodeIndex} from './getNodeIndex.js';
+import {getNodeIndex} from '../methods/getNodeIndex.js';
 
 class CommentsVidget extends React.Component {
 

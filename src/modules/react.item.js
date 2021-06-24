@@ -1,5 +1,5 @@
-import {constants} from './constants.js';
-import {getTimeString} from './getTimeString.js';
+import {constants} from '../constants.js';
+import {getTimeString} from '../methods/getTimeString.js';
 
 class CommentItem extends React.Component {
 
