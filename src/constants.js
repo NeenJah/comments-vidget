@@ -19,4 +19,4 @@ const constants = {
   }
 };
 
-export {constants};
+export { constants };

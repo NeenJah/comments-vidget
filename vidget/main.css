@@ -27,12 +27,11 @@
   flex-direction: column;
 }
 
-.comments__form > *:not(:last-child) {
+.comments__form>*:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.comments__form input,
-.comments__form textarea {
+.comments__form input, .comments__form textarea {
   padding: 10px;
 }
 
