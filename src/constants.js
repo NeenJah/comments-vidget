@@ -8,8 +8,6 @@ const constants = {
   DEL_BTN_TEXT: `Удалить`,
   commentForm: {
     CLASS: `comments__form`,
-    ACTION: `#`,
-    METHOD: `GET`,
     NAME: `commentsForm`,
     AUTHOR_NAME: `author`,
     AUTHOR_LABEL: `Ваше имя:`,

@@ -1,4 +1,3 @@
-
 export function getTimeString(date, isNeedTime) {
   const year = date.getFullYear(),
     month = ((date.getMonth() + 1) < 10) ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1),
@@ -7,5 +6,5 @@ export function getTimeString(date, isNeedTime) {
     minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes()
   return !isNeedTime ?
     `${year}-${month}-${day}` :
-    `${year}-${month}-${day} ${hours}:${minutes}`;
+    `${year}-${month}-${day}T${hours}:${minutes}`;
 }

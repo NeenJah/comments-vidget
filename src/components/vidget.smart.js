@@ -1,7 +1,6 @@
-import { constants } from '../constants.js';
-import { CommentsList } from './react.list.js';
-import { AddCommentForm } from './react.form.js';
-import { getNodeIndex } from '../methods/getNodeIndex.js';
+import { CommentsList } from './list.js';
+import { AddCommentForm } from './form.js';
+import { v4 as uuidv4 } from 'uuid';
 
 class CommentsVidget extends React.Component {
 
@@ -20,9 +19,9 @@ class CommentsVidget extends React.Component {
     event.preventDefault();
 
     const commentObj = {
-      key: Date.now(),  //берем в качестве ключа текущее время в миллисекундах (react требует id для каждого компонента)
-      author: event.target[constants.commentForm.AUTHOR_NAME].value,
-      comment: event.target[constants.commentForm.COMMENT_NAME].value,
+      key: uuidv4(),  //создаём идентификатор для элемента
+      author: event.target.author.value,
+      comment: event.target.comment.value,
       time: new Date(),
     };
 
@@ -38,11 +37,10 @@ class CommentsVidget extends React.Component {
   }
 
   onDelCommentBtnClick(event) {
-    if (!event.target.matches(`.${constants.DEL_BTN_CLASS}`)) return;
 
     //получаем индекс комментария
-    const parent = event.target.closest(`.${constants.ITEM_CLASS}`),
-      index = getNodeIndex(parent);
+    const parentEl = event.target.closest(`.comments__item`),
+      index = Array.from(parentEl.parentNode.children).indexOf(parentEl);
 
     //убираем комментарий из состояния, обновляем
     this.setState((state, props) => {
@@ -54,10 +52,10 @@ class CommentsVidget extends React.Component {
   }
 
   render() {
-    return <div className={constants.CONTAINER_CLASS}>
+    return (<div className="comments__container">
       <CommentsList comments={this.state.comments} onDelItem={this.onDelCommentBtnClick} />
       <AddCommentForm onSubmit={this.onAddCommentFormSubmit} />
-    </div>;
+    </div>);
   }
 
 }
