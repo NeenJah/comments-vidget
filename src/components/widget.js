@@ -1,15 +1,16 @@
+import { LocalStorageApi } from '../localStorageApi.js';
 import { CommentsList } from './list.js';
 import { AddCommentForm } from './form.js';
 import { v4 as uuidv4 } from 'uuid';
 
-class CommentsVidget extends React.Component {
+const commentsStorage = new LocalStorageApi(`comments`);
+
+class CommentsWidget extends React.Component {
 
   constructor(props) {
     super(props);
 
-    this.state = {
-      comments: props.comments,
-    };
+    this.state = {comments: commentsStorage.get()};
 
     this.onAddCommentFormSubmit = this.onAddCommentFormSubmit.bind(this);
     this.onDelCommentBtnClick = this.onDelCommentBtnClick.bind(this);
@@ -25,11 +26,11 @@ class CommentsVidget extends React.Component {
       time: new Date(),
     };
 
-    //добавляем комментарий в состояния, обновляем
+    //добавляем комментарий, обновляем состояние
     this.setState((state, props) => {
-      state.comments.push(commentObj);
+      commentsStorage.push(commentObj);
       return {
-        comments: state.comments,
+        comments: commentsStorage.get(),
       };
     });
 
@@ -42,22 +43,24 @@ class CommentsVidget extends React.Component {
     const parentEl = event.target.closest(`.comments__item`),
       index = Array.from(parentEl.parentNode.children).indexOf(parentEl);
 
-    //убираем комментарий из состояния, обновляем
+    //убираем комментарий, обновляем состояние
     this.setState((state, props) => {
-      state.comments.splice(index, 1);
+      commentsStorage.splice(index, 1);
       return {
-        comments: state.comments,
+        comments: commentsStorage.get(),
       }
     });
   }
 
   render() {
+    const {comments} = this.state,
+          delItemHandler = this.onDelCommentBtnClick;
     return (<div className="comments__container">
-      <CommentsList comments={this.state.comments} onDelItem={this.onDelCommentBtnClick} />
+      <CommentsList comments={comments} onDelItem={delItemHandler} />
       <AddCommentForm onSubmit={this.onAddCommentFormSubmit} />
     </div>);
   }
 
 }
 
-export { CommentsVidget };
+export { CommentsWidget };

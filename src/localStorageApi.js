@@ -20,14 +20,14 @@ export class LocalStorageApi {
     const tempArray = this.get(),
       nativeReturnLength = tempArray.push(value);
     this.set(tempArray);
-    return nativeReturnLength; //возвращаем значение (длина массива), копируя нативное поведение
+    return nativeReturnLength; //возвращаем значение (длина массива), копируя нативное поведение массива
   }
 
   splice() {
     const tempArray = this.get(),
       nativeReturnArray = tempArray.splice(...arguments);
     this.set(tempArray);
-    return nativeReturnArray; //возвращаем значение (массив удалённых элементов), копируя нативное поведение
+    return nativeReturnArray; //возвращаем значение (массив удалённых элементов), копируя нативное поведение массива
   }
 
   clear() {

@@ -4,14 +4,17 @@ import { getTimeString } from '../utils.js';
 class CommentItem extends React.Component {
 
   render() {
-    return <article className="comments__item">
+    const dateTime = getTimeString(new Date(this.props.time), true),
+          timeStr = new Date(this.props.time).toLocaleString(`ru`),
+          {onDelete, author} = this.props;
+    return (<article className="comments__item">
       <div>
-        <h3>{this.props.author}</h3>
+        <h3>{author}</h3>
         <p>{this.props.comment}</p>
-        <time dateTime={getTimeString(new Date(this.props.time), true)}>{new Date(this.props.time).toLocaleString(`ru`)}</time>
+        <time dateTime={dateTime}>{timeStr}</time>
       </div>
-      <button className="comments__del-btn" onClick={this.props.onDelete} type="button">Удалить</button>
-    </article>;
+      <button className="comments__del-btn" onClick={onDelete} type="button">Удалить</button>
+    </article>);
   }
 
 }

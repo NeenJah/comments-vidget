@@ -1,13 +1,11 @@
 `use strict`;
 
-import { CommentsVidget } from './components/vidget.smart.js';
-import { LocalStorageApi } from './localStorageApi.js';
+import { CommentsWidget } from './components/widget.js';
 import './css/vidget.css';
 
-const root = document.querySelector(`.js-comments-vidget`),
-  storage = new LocalStorageApi(`comments`);
+const root = document.querySelector(`.js-comments-vidget`);
 
 ReactDOM.render(
-  <CommentsVidget comments={storage} />,
+  <CommentsWidget />,
   root
 );

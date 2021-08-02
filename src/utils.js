@@ -1,10 +1,16 @@
 export function getTimeString(date, isNeedTime) {
-  const year = date.getFullYear(),
-    month = ((date.getMonth() + 1) < 10) ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1),
-    day = (date.getDate() < 10) ? '0' + date.getDate() : date.getDate(),
-    hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours(),
-    minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes()
+  const dateOptions = {
+    year: `numeric`,
+    month: `2-digit`,
+    day:`2-digit`,
+  },
+  timeOptions = {
+    hour: `2-digit`,
+    minute: `2-digit`,
+  },
+  dateStr = date.toLocaleString(`ru`, dateOptions).replace(/\./g, `-`),
+  timeStr = `T${date.toLocaleString(`ru`, timeOptions)}`;
+    
   return !isNeedTime ?
-    `${year}-${month}-${day}` :
-    `${year}-${month}-${day}T${hours}:${minutes}`;
+    dateStr : dateStr + timeStr;
 }

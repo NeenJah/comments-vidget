@@ -2,10 +2,11 @@
 class AddCommentForm extends React.Component {
 
   render() {
+    const {onSubmit} = this.props;
     return (<form
       className="comments__form"
       name="commentsForm"
-      onSubmit={this.props.onSubmit}
+      onSubmit={onSubmit}
     >
       <label>Ваше имя:
         <input type="text" name="author" required />
