@@ -7,7 +7,7 @@ class CommentItem extends React.Component {
     const dateTime = getTimeString(new Date(this.props.time), true),
           timeStr = new Date(this.props.time).toLocaleString(`ru`),
           {onDelete, author} = this.props;
-    return (<article className="comments__item">
+    return (<article>
       <div>
         <h3>{author}</h3>
         <p>{this.props.comment}</p>
