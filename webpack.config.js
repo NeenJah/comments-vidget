@@ -6,7 +6,7 @@ module.exports = {
   mode: `development`,
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'vidget'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'index.js',
   },
   plugins: [new MiniCssExtractPlugin()],
