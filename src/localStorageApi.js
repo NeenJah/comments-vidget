@@ -15,6 +15,13 @@ export class LocalStorageApi {
   set(value) {
     localStorage.setItem(this.key, JSON.stringify(value));
   }
+  
+  filter() {
+    const tempArray = this.get(),
+          filteredArray = tempArray.filter(...arguments);
+    this.set(filteredArray);
+    return filteredArray;
+  }
 
   push(value) {
     const tempArray = this.get(),

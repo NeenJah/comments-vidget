@@ -1,0 +1,42 @@
+.comments__container {
+  padding: 20px;
+  background-color: #d3d3d3;
+  border: 1px solid #555;
+}
+
+.comments__list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.comments__item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.comments__item div {
+  margin-right: auto;
+}
+
+.comments__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comments__form>*:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.comments__form input, .comments__form textarea {
+  padding: 10px;
+}
+
+.comments__form button {
+  padding: 20px 35px;
+  border-color: aqua violet violet aqua;
+  border-radius: 50px;
+}

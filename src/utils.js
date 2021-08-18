@@ -9,7 +9,7 @@ export function getTimeString(date, isNeedTime) {
     minute: `2-digit`,
   },
   dateStr = date.toLocaleString(`ru`, dateOptions).replace(/\./g, `-`),
-  timeStr = `T${date.toLocaleString(`ru`, timeOptions)}`;
+  timeStr = `T${date.toLocaleString('ru', timeOptions)}`;
     
   return !isNeedTime ?
     dateStr : dateStr + timeStr;
