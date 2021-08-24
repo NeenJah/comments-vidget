@@ -17,22 +17,25 @@ export class LocalStorageApi {
   }
   
   filter() {
-    const tempArray = this.get(),
-          filteredArray = tempArray.filter(...arguments);
+    const tempArray = this.get();
+    const filteredArray = tempArray.filter(...arguments);
+    
     this.set(filteredArray);
     return filteredArray;
   }
 
   push(value) {
-    const tempArray = this.get(),
-      nativeReturnLength = tempArray.push(value);
+    const tempArray = this.get();
+    const nativeReturnLength = tempArray.push(value);
+    
     this.set(tempArray);
     return nativeReturnLength; //возвращаем значение (длина массива), копируя нативное поведение массива
   }
 
   splice() {
-    const tempArray = this.get(),
-      nativeReturnArray = tempArray.splice(...arguments);
+    const tempArray = this.get();
+    const nativeReturnArray = tempArray.splice(...arguments);
+    
     this.set(tempArray);
     return nativeReturnArray; //возвращаем значение (массив удалённых элементов), копируя нативное поведение массива
   }

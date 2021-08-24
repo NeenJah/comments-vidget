@@ -1,7 +1,7 @@
 `use strict`;
 
 import { CommentsWidget } from './components/widget.js';
-import './css/vidget.css';
+import './css/widget.css';
 
 const root = document.querySelector(`.js-comments-vidget`);
 

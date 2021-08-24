@@ -29,7 +29,6 @@ class AddCommentForm extends React.Component {
       onSubmit={onSubmit}
       onChange={this.onFieldChange}
     >
-      <p>{author}</p>
       <label>Ваше имя:
         <input type="text" name="author" required />
       </label>

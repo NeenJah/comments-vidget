@@ -61,9 +61,9 @@ class CommentsWidget extends React.Component {
   }
 
   render() {
-    const {comments} = this.state,
-          delItemHandler = this.onDelCommentBtnClick,
-          addCommentHandler = this.onAddCommentFormSubmit;
+    const {comments} = this.state;
+    const delItemHandler = this.onDelCommentBtnClick;
+    const addCommentHandler = this.onAddCommentFormSubmit;
     return (<div className="comments__container">
       <CommentsList comments={comments} onDelBtnClick={delItemHandler} />
       <AddCommentForm onSubmit={addCommentHandler} />
