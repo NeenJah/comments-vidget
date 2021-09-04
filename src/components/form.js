@@ -3,15 +3,15 @@ class AddCommentForm extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       author: ``,
       comment: ``,
     };
-    
+
     this.onFieldChange = this.onFieldChange.bind(this);
   }
-  
+
   onFieldChange(event) {
     this.setState(() => {
       return {
@@ -21,8 +21,8 @@ class AddCommentForm extends React.Component {
   }
 
   render() {
-    const {onSubmit} = this.props;
-    const {author} = this.state;
+    const { onSubmit } = this.props;
+    const { author } = this.state;
     return (<form
       className="comments__form"
       name="commentsForm"

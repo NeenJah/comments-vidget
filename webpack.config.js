@@ -1,15 +1,12 @@
-
 const path = require('path');
-  //MiniCssExtractPlugin = require(`mini-css-extract-plugin`);
 
 module.exports = {
   mode: `development`,
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'index.js',
+    filename: 'index.js'
   },
-  //plugins: [new MiniCssExtractPlugin()],
   module: {
     rules: [
       {
@@ -24,7 +21,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [/*MiniCssExtractPlugin.loader*/'style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
       }
     ]
   }

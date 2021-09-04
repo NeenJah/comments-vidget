@@ -10,13 +10,13 @@ class CommentsWidget extends React.Component {
 
   constructor(props) {
     super(props);
-    
-    this.state = {comments: []};
-    
+
+    this.state = { comments: [] };
+
     this.onAddCommentFormSubmit = this.onAddCommentFormSubmit.bind(this);
     this.onDelCommentBtnClick = this.onDelCommentBtnClick.bind(this);
   }
-  
+
   componentDidMount() {
     this.setState(() => {
       return {
@@ -61,7 +61,7 @@ class CommentsWidget extends React.Component {
   }
 
   render() {
-    const {comments} = this.state;
+    const { comments } = this.state;
     const delItemHandler = this.onDelCommentBtnClick;
     const addCommentHandler = this.onAddCommentFormSubmit;
     return (<div className="comments__container">

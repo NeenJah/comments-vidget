@@ -5,7 +5,4 @@ import './css/widget.css';
 
 const root = document.querySelector(`.js-comments-vidget`);
 
-ReactDOM.render(
-  <CommentsWidget />,
-  root
-);
+ReactDOM.render(<CommentsWidget />, root);
