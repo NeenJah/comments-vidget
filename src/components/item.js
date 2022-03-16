@@ -1,10 +1,9 @@
 
 import { getIsoString } from '../utils.js';
 
-function CommentItem(props) {
-  const dateTime = getIsoString(new Date(props.time)),
-    timeStr = new Date(props.time).toLocaleString(`ru`),
-    { id, onDelBtnClick, author, comment } = props;
+function CommentItem({ id, onDelBtnClick, author, comment, time }) {
+  const dateTime = getIsoString(new Date(time)),
+    timeStr = new Date(time).toLocaleString(`ru`);
   return (<article id={id}>
     <div>
       <h2>{author}</h2>

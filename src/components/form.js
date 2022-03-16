@@ -22,7 +22,7 @@ class AddCommentForm extends React.Component {
 
   render() {
     const { onSubmit } = this.props;
-    const { author } = this.state;
+    
     return (<form
       className="comments__form"
       name="commentsForm"
