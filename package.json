@@ -1,11 +1,12 @@
 {
-  "name": "comments-vidget",
+  "name": "comments-widget",
   "version": "1.0.0",
   "description": "comments vidget on react",
   "main": "index.js",
   "scripts": {
     "test": "echo \"its alive\"",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server"
   },
   "author": "igor averin",
   "license": "ISC",
@@ -18,10 +19,12 @@
     "mini-css-extract-plugin": "^1.6.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.42.0",
-    "webpack-cli": "^4.7.2"
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.8.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "uuid": "^8.3.2"

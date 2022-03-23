@@ -1,5 +1,6 @@
+import React from 'react';
 
-class AddCommentForm extends React.Component {
+export default class AddCommentForm extends React.Component {
 
   constructor(props) {
     super(props);
@@ -22,7 +23,7 @@ class AddCommentForm extends React.Component {
 
   render() {
     const { onSubmit } = this.props;
-    
+
     return (<form
       className="comments__form"
       name="commentsForm"
@@ -41,4 +42,4 @@ class AddCommentForm extends React.Component {
 
 }
 
-export { AddCommentForm };
+// export { AddCommentForm };

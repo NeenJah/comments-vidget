@@ -1,7 +1,7 @@
-
+import React from 'react';
 import { getIsoString } from '../utils.js';
 
-function CommentItem({ id, onDelBtnClick, author, comment, time }) {
+export default function CommentItem({ id, onDelBtnClick, author, comment, time }) {
   const dateTime = getIsoString(new Date(time)),
     timeStr = new Date(time).toLocaleString(`ru`);
   return (<article id={id}>
@@ -13,5 +13,3 @@ function CommentItem({ id, onDelBtnClick, author, comment, time }) {
     <button className="comments__del-btn" onClick={onDelBtnClick} type="button">Удалить</button>
   </article>);
 }
-
-export { CommentItem };
