@@ -1,5 +1,3 @@
-`use strict`;
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CommentsWidget from './smart-components/widget.js';
