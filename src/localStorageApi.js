@@ -1,4 +1,4 @@
-export class LocalStorageApi {
+export default class LocalStorageApi {
   constructor(key) {
     this.key = key;
     if (!localStorage.getItem(key)) {

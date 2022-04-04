@@ -1,10 +1,15 @@
+import { localStorageState } from "../store";
+
 export default function reduceComments(state = [], action) {
   switch(action.type) {
     case `comments/addComment`:
-      console.log([...state, action.payload]);
-      return [...state, action.payload];
+      state = [...state, action.payload];
+      localStorageState.set(state);
+      return state;
     case `comments/delComment`:
-      return state.filter(comment => comment.id !== action.payload);
+      state = state.filter(comment => comment.id !== action.payload);
+      localStorageState.set(state);
+      return state;
     default:
       return state;
   }
